@@ -1,0 +1,172 @@
+:root {
+    --primary-color: #e2feff;
+    --secondary-color: #4aabff;
+    --bg-dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+   
+}
+/* پاشبنەما یا دجوولیت */
+.bg-animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #676666, #3b1204, #efeff5);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    z-index: -1;
+   
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* کارتا سەرەکی */
+.main-card {
+    width: 90%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* وێنێ پرۆفایلی دگەل رینگا دچیت */
+.avatar-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+}
+
+.user-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.bio {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* دوگمێن شیشەیی */
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.glass-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.glass-btn i {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+}
+
+/* ئێفێکتێ Shimmer (برقە) */
+.shimmer {
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.glass-btn:hover .shimmer {
+    left: 150%;
+}
+
+.glass-btn:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2);
+}
+
+/* رەنگێن تایبەت بۆ هەر لینکەکی ل سەر هووڤەر (Hover) */
+.instagram:hover { border-color: #e13036; color: #e13036; }
+.tiktok:hover { border-color: #010101; color: #000000; }
+.telegram:hover { border-color: #0088cc; color: #0088cc; }
+
+/* سۆشیالێن بچووک */
+.mini-socials {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mini-socials a {
+    color: #666;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.mini-socials a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
